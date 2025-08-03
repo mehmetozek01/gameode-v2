@@ -37,19 +37,3 @@ Tailwind CSS ile şık, hızlı ve responsive bir arayüz sunar.
 
 ## 📂 Proje Dosya Yapısı
 
-```plaintext
-/gameode-v2
-├── /app
-│   └── /games
-│       └── /[slug]
-│           └── page.tsx          # Oyun detay sayfası
-├── /data
-│   └── games.json                # Oyun verileri JSON dosyası
-├── /pages
-│   └── /api
-│       └── hello.ts             # API Route örneği
-├── /public
-│   └── /images                  # Statik görseller
-├── package.json
-├── tsconfig.json
-└── README.md
