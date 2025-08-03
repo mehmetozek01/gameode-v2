@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "league-of-legends",
+    "img": "https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-80471666c140f790f28dff68d72c384b",
+    "title": "LEAGUE OF LEGENDS",
+    "description": "League of Legends (kısaca LoL, Türkçe anlamı: Efsaneler Ligi), Riot Games tarafından geliştirilen ve yayımlanan video oyunu..."
+  },
+  {
+    "slug": "valorant",
+    "img": "https://images.alphacoders.com/135/thumb-1920-1356696.jpeg",
+    "title": "VALORANT",
+    "description": "Valorant (VALORANT olarak stilize edilir), Riot Games tarafından geliştirilip yayınlanan free-to-play..."
+  }
+]
