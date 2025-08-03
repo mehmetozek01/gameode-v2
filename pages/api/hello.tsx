@@ -1,7 +1,7 @@
 // app/games/[slug]/page.tsx
 
 import { notFound } from "next/navigation";
-import { sliderData } from "../../../data/games.json";
+import sliderData from "../../data/games.json";
 
 interface Game {
   slug: string;
@@ -22,7 +22,6 @@ export default function GameDetailPage({ params }: Props) {
   if (!game) {
     return notFound();
   }
-
   return (
     <main className="min-h-screen p-8 bg-zinc-900 text-white">
       <h1 className="text-4xl font-bold mb-6">{game.title}</h1>
@@ -34,4 +33,5 @@ export default function GameDetailPage({ params }: Props) {
       <p className="text-lg leading-relaxed">{game.description}</p>
     </main>
   );
+
 }
