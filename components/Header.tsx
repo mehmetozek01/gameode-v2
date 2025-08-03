@@ -54,6 +54,11 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
+            <Link className="font-Ovo" href="/game">
+              Oyunlar
+            </Link>
+          </li>
+          <li>
             <Link
               className="font-Ovo" href="/about">
               Hakkımda
@@ -61,11 +66,7 @@ const Navbar: React.FC = () => {
 
           </li>
 
-          <li>
-            <Link className="font-Ovo" href="/game">
-              Oyunlar
-            </Link>
-          </li>
+
           <li>
             <FiSearch className={`text-xl text-gray-600 ${isScroll ? "text-white" : ""}`} />
           </li>
