@@ -11,6 +11,8 @@ module.exports = {
       colors:{
         "dark": '#232a3c',
         'medium': '#293245',
+       "koyugri": "#202020",
+       "indexgri": "#151515",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

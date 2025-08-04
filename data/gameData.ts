@@ -37,3 +37,4 @@ const sliderData = [
   },
 ];
 export default sliderData;
+

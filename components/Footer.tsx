@@ -4,7 +4,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaGithub, FaLinkedinIn, FaYoutube 
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-6 md:px-20 select-none">
+   <div className="border-t mt-16 border-gray-800 ">
+     <footer className="bg-indexgri text-gray-300 py-16 px-6 md:px-20 select-none">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Logo & About */}
         <div className="space-y-4 md:col-span-2">
@@ -78,5 +79,6 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} Gameode. Tüm hakları saklıdır. Tasarım & Geliştirme Serpent.
       </div>
     </footer>
+   </div>
   );
 }

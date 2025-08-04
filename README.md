@@ -35,5 +35,3 @@ Tailwind CSS ile şık, hızlı ve responsive bir arayüz sunar.
 
 ---
 
-## 📂 Proje Dosya Yapısı
-
