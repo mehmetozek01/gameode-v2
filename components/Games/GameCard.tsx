@@ -131,7 +131,7 @@ const GameCard = memo(({ game }: GameCardProps) => {
 
       tabIndex={0}
       aria-label={`Game card for ${game.name}`}
-      className="w-72 h-96 cursor-pointer select-none rounded-xl bg-gray-900 outline-none relative overflow-hidden"
+      className="w-58 h-80 cursor-pointer select-none rounded-xl bg-gray-900 outline-none relative overflow-hidden"
       animate={controls}
       style={{
         perspective: 900,
@@ -168,12 +168,13 @@ const GameCard = memo(({ game }: GameCardProps) => {
       <div className="relative z-10 flex flex-col h-full justify-between p-4">
         {/* Title */}
         <h2
-          className={`text-white backdrop-blur-md rounded-full px-6 py-3 shadow-lg text-center text-2xl font-extrabold drop-shadow-lg line-clamp-2 select-text transition-opacity duration-300 ${hovered ? "opacity-0" : "opacity-100"
-            }`}
+          className={`relative text-white text-center font-bold text-md px-4 py-2 rounded-3xl bg-gradient-to-b from-black/70 to-black/40 backdrop-blur-sm shadow-md line-clamp-2 select-none transition-opacity duration-300 ${hovered ? "opacity-0" : "opacity-100"}`}
           title={game.name}
         >
           {game.name}
         </h2>
+
+
 
 
 
@@ -187,12 +188,12 @@ const GameCard = memo(({ game }: GameCardProps) => {
               animate={{ y: "0%", opacity: 1 }}
               exit={{ y: "100%", opacity: 0 }}
               transition={{ type: "spring", stiffness: 120, damping: 15 }}
-              className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-transparent to-transparent rounded-b-xl p-5 text-gray-200 text-sm max-h-[140px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-800"
+              className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-transparent to-transparent rounded-b-xl p-2 text-gray-200 text-sm max-h-[140px] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-800"
               aria-hidden={!hovered}
             >
               <motion.div>
                 {/* Platforms */}
-                <div className="absolute top-0 left-2 flex gap-2 z-20 ml-3 mb-2">
+                <div className="absolute top-0 left-0 flex gap-2 z-20 ml-2 mb-2">
                   {game.platforms.slice(0, 4).map((p, idx) => {
                     const name = p.platform.name;
                     const key = Object.keys(platformIcons).find((k) =>
@@ -204,15 +205,20 @@ const GameCard = memo(({ game }: GameCardProps) => {
                     ) : null;
                   })}
                 </div>
-
+                {/* <h2
+                  className="text-white rounded-full"
+                  title={game.name}
+                >
+                  {game.name}
+                </h2> */}
               </motion.div>
-              <p>
+              <p className="mt-2">
                 <strong>Release Date:</strong> {game.released}
               </p>
               <p>
                 <strong>Genres:</strong> {game.genres.map((g) => g.name).join(", ")}
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 ">
                 <strong>Rating:</strong> {renderStars(game.rating)}
                 <span>{game.rating.toFixed(1)}/5</span>
               </p>

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Lottie from "lottie-react";
-import loadingAnimation from "../public/lottie/loading.json"; // Kendi animasyon dosyan
+import loadingAnimation from "../../public/lottie/loading.json"; // Kendi animasyon dosyan
 
 export default function LoadingScreen() {
   return (

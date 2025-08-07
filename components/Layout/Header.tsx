@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 import { FiMoon, FiMenu, FiSearch } from "react-icons/fi";
 import { useSwipeable } from "react-swipeable";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../Theme/ThemeToggle";
 import Link from "next/link";
 import { HiOutlineArrowTopRightOnSquare } from 'react-icons/hi2';
 

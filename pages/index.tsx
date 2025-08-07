@@ -1,16 +1,17 @@
 import { Righteous } from "next/font/google";
 import { AnimatePresence } from "framer-motion";
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import Header from "@/components/Header";
-import BackgroundImage from "@/components/BackgroundImage";
-import Slides from "@/components/Slides";
-import SlideInfo from "@/components/SlideInfo";
-import Controls from "@/components/Controls";
+import Header from "@/components/Layout/Header";
+import BackgroundImage from "@/components/Slidercard/BackgroundImage";
+import Slides from "@/components/Slidercard/Slides";
+import SlideInfo from "@/components/Slidercard/SlideInfo";
+import Controls from "@/components/Slidercard/Controls";
 import sliderData from "@/data/gameData";
-import Footer from "@/components/Footer";
-import GameCard from "@/components/GameCard";
-import { Game } from "@/data/gamesData";
-import LoadingScreen from "@/components/LoadingScreen";
+import Footer from "@/components/Layout/Footer";
+import GameCard from "@/components/Games/GameCard";
+import LoadingScreen from "@/components/Loading/LoadingScreen";
+import NewsCard from "@/components/News/Page";
+import { fetchGamesFromRAWG } from "./api/rawg";
 
 const inter = Righteous({
   subsets: ["latin"],
@@ -50,14 +51,13 @@ export default function Home() {
   // API'den oyunları çek
   const fetchGames = useCallback(async () => {
     setLoading(true);
-    const res = await fetch(
-      `https://api.rawg.io/api/games?key=6d3e00ba1feb4b6b81d2692ce6379cdb&page=${page}&page_size=${PAGE_SIZE}`
-    );
-    const data = await res.json();
-
-    setGames((prev) => [...prev, ...data.results]);
-    // Daha fazla veri var mı kontrol et
-    setHasMore(data.next !== null);
+    try {
+      const data = await fetchGamesFromRAWG(page);
+      setGames((prev) => [...prev, ...data.results]);
+      setHasMore(data.next !== null);
+    } catch (error) {
+      console.error("API'den veri alınamadı:", error);
+    }
     setLoading(false);
   }, [page]);
 
@@ -87,8 +87,7 @@ export default function Home() {
       <main
         className={`
        ${inter.className}
-        relative min-h-screen select-none overflow-hidden text-white  antialiased`}
-      >
+        relative min-h-screen select-none overflow-hidden text-white  antialiased`}>
         <AnimatePresence>
           <BackgroundImage
             transitionData={transitionData}
@@ -120,24 +119,34 @@ export default function Home() {
         </AnimatePresence>
       </main>
       {/* Game card and News */}
-      <div className="bg-indexgri min-h-screen px-5 sm:px-10 md:px-20 py-7">
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {games.map((game) => (
-            <GameCard key={game.id} game={game} />
-          ))}
+      <div className="flex gap-6 p-6 min-h-screen bg-indexgri">
+        {/* Haberler - Solda */}
+        <div className="w-1/3">
+          <h2 className="text-white font-bold text-2xl mb-4">Oyun Haberleri</h2>
+          <NewsCard />
         </div>
 
-        {loading && (
-          <p className="text-white text-center mt-4">Yükleniyor...</p>
-        )}
+        {/* Sağdaki Oyun Kartları Bölümü */}
+        <main className="flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {games.map((game) => (
+              <GameCard key={game.id} game={game} />
+            ))}
+          </div>
 
-        {!hasMore && !loading && (
-          <p className="text-gray-400 text-center mt-4">
-            Daha fazla oyun bulunamadı.
-          </p>
-        )}
+          {loading && (
+            <p className="text-white text-center mt-4">Yükleniyor...</p>
+          )}
+
+          {!hasMore && !loading && (
+            <p className="text-gray-400 text-center mt-4">
+              Daha fazla oyun bulunamadı.
+            </p>
+          )}
+        </main>
       </div>
+
+
 
 
 
