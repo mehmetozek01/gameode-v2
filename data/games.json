@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "The Witcher 3",
+    "description": "Open world RPG with deep storytelling.",
+    "imageUrl": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
+    "genres": ["RPG", "Adventure"],
+    "platforms": ["pc", "playstation", "xbox"]
+  }
+]
