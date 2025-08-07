@@ -1,3 +1,16 @@
+// utils/platformIcons.ts
+import { FaWindows, FaPlaystation, FaXbox } from "react-icons/fa";
+import { IconType } from "react-icons"; // React-Icons tip desteği
+import { SiNintendoswitch } from "react-icons/si";
+
+export const platformIcons: Record<string, IconType> = {
+  PC: FaWindows,
+  PS5: FaPlaystation,
+  Xbox: FaXbox,
+  Switch: SiNintendoswitch,
+};
+
+
 export interface Game {
   id: number;
   title: string;
@@ -6,89 +19,3 @@ export interface Game {
   platforms: string[];
 }
 
-export const gamesData: Game[] = [
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-  {
-    id: 1,
-    title: "Elden Ring",
-    imageUrl: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    genres: ["Action", "RPG"],
-    platforms: ["PC", "PS5", "Xbox"],
-  },
-  {
-    id: 2,
-    title: "Hollow Knight",
-    imageUrl: "https://media.rawg.io/media/resize/640/-/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
-    genres: ["Metroidvania", "Indie"],
-    platforms: ["PC", "Switch"],
-  },
-];

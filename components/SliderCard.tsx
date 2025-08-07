@@ -24,7 +24,7 @@ function SliderCard({ data }: Props) {
         damping: 20,
         stiffness: 100,
       }}
-      >
+    >
       <motion.img
         layoutId={data.img}
         alt="Transition Image"
@@ -32,7 +32,7 @@ function SliderCard({ data }: Props) {
         className="absolute h-full w-full rounded-2xl object-cover brightness-75"
       />
 
-      <motion.div className="absolute bottom-0 left-0 right-0 z-10       flex justify-center p-4">
+      <motion.div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center p-4">
         <motion.div>
           <motion.div
             layout
