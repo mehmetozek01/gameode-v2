@@ -1,11 +1,11 @@
 import React from 'react'
 
-const News = () => {
+const NewsCard = () => {
   return (
-    <div className='text-white'>
-      Haberler
+    <div>
+      
     </div>
   )
 }
 
-export default News
+export default NewsCard

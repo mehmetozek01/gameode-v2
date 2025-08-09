@@ -12,6 +12,7 @@ import GameCard from "@/components/Games/GameCard";
 import LoadingScreen from "@/components/Loading/LoadingScreen";
 import NewsCard from "@/components/News/Page";
 import { fetchGamesFromRAWG } from "./api/rawg";
+import GameNewsPage from "@/components/News/Page";
 
 const inter = Righteous({
   subsets: ["latin"],
@@ -123,7 +124,7 @@ export default function Home() {
         {/* Haberler - Solda */}
         <div className="w-1/3">
           <h2 className="text-white font-bold text-2xl mb-4">Oyun Haberleri</h2>
-          <NewsCard />
+          <NewsCard/>
         </div>
 
         {/* Sağdaki Oyun Kartları Bölümü */}
